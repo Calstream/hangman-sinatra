@@ -1,0 +1,64 @@
+body {
+  background: linear-gradient(200deg, #56b09d, #2e458e);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  -o-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+      0%{background-position:100% 0%}
+      50%{background-position:0% 100%}
+      100%{background-position:100% 0%}
+  }
+  @-moz-keyframes AnimationName {
+      0%{background-position:100% 0%}
+      50%{background-position:0% 100%}
+      100%{background-position:100% 0%}
+  }
+  @-o-keyframes AnimationName {
+      0%{background-position:100% 0%}
+      50%{background-position:0% 100%}
+      100%{background-position:100% 0%}
+  }
+  @keyframes AnimationName {
+      0%{background-position:100% 0%}
+      50%{background-position:0% 100%}
+      100%{background-position:100% 0%}
+  }
+}
+
+#keyboard
+{
+  width: 900px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 30px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.23);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding: 10px;
+}
+
+.key
+{
+  background-color: rgba(255, 255, 255, 0.13);
+  width: 90px;
+  height: 90px;
+  margin: 3px;
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.23);
+  color: rgba(255, 255, 255, 0.83);
+  font-size: 30pt;
+  font-family: arial;
+  float: left;
+  text-align: center;
+  line-height: 90px;
+  /*padding-top: 10px;*/
+}
