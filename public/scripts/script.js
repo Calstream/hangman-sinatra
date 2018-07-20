@@ -6,6 +6,7 @@ function init()
     {
       let key = document.createElement("div");
       key.className = "key";
+      key.className += " button";
       let char = String.fromCharCode(97 + i).toUpperCase();
       key.id = char + "_key"
       key.innerHTML += char;
