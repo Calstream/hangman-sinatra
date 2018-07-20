@@ -1,34 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-body {
+body
+{
   background: linear-gradient(200deg, #56b09d, #2e458e);
   background-size: 400% 400%;
-
-  -webkit-animation: AnimationName 30s ease infinite;
-  -moz-animation: AnimationName 30s ease infinite;
-  -o-animation: AnimationName 30s ease infinite;
-  animation: AnimationName 30s ease infinite;
-
-  @-webkit-keyframes AnimationName {
-      0%{background-position:100% 0%}
-      50%{background-position:0% 100%}
-      100%{background-position:100% 0%}
-  }
-  @-moz-keyframes AnimationName {
-      0%{background-position:100% 0%}
-      50%{background-position:0% 100%}
-      100%{background-position:100% 0%}
-  }
-  @-o-keyframes AnimationName {
-      0%{background-position:100% 0%}
-      50%{background-position:0% 100%}
-      100%{background-position:100% 0%}
-  }
-  @keyframes AnimationName {
-      0%{background-position:100% 0%}
-      50%{background-position:0% 100%}
-      100%{background-position:100% 0%}
-  }
 }
 
 #keyboard
@@ -65,6 +40,14 @@ body {
   transition: .3s;
 }
 
+.text{
+  font-size: 60pt;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  text-align: center;
+  margin-right: 20px;
+}
+
 .key:hover
 {
   background-color: rgba(255, 255, 255, 0.23);
@@ -78,4 +61,26 @@ body {
   -webkit-box-shadow: 0px 0px 10px 1px rgba(255,255,255,0.5);
   -moz-box-shadow: 0px 0px 10px 1px rgba(255,255,255,0.5);
   box-shadow: 0px 0px 10px 1px rgba(255,255,255,0.5);
+}
+
+#swinging
+{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 300px;
+  height: 338px;
+  background-image: url("../images/hangman_swinging.png");
+  animation: playSwingX .55s steps(5) infinite,
+              playSwingY 3.3s steps(6) infinite;
+}
+
+@keyframes playSwingX {
+  from {background-position-x: 0px;}
+  to {background-position-x: -1500px;}
+}
+
+@keyframes playSwingY {
+  from {background-position-y: 0px;}
+  to {background-position-y: -2028px;}
 }
