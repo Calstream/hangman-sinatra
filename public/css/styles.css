@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 body {
   background: linear-gradient(200deg, #56b09d, #2e458e);
   background-size: 400% 400%;
@@ -49,16 +51,31 @@ body {
   background-color: rgba(255, 255, 255, 0.13);
   width: 90px;
   height: 90px;
-  margin: 3px;
+  margin: 4px;
   border-radius: 10px;
   border-width: 1px;
   border-style: solid;
   border-color: rgba(255, 255, 255, 0.23);
   color: rgba(255, 255, 255, 0.83);
-  font-size: 30pt;
-  font-family: arial;
+  font-size: 40pt;
+  font-family: 'Raleway', sans-serif;
   float: left;
   text-align: center;
   line-height: 90px;
-  /*padding-top: 10px;*/
+  transition: .3s;
+}
+
+.key:hover
+{
+  background-color: rgba(255, 255, 255, 0.23);
+  text-shadow: 0px 0px 10px rgba(255,255,255,0.7);
+
+}
+
+.key:active
+{
+  transition: .1s;
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(255,255,255,0.5);
+  -moz-box-shadow: 0px 0px 10px 1px rgba(255,255,255,0.5);
+  box-shadow: 0px 0px 10px 1px rgba(255,255,255,0.5);
 }
