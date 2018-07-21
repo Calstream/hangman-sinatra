@@ -1,34 +1,49 @@
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/shared.css">
+    <link rel="stylesheet" type="text/css" href="../css/settings.css">
     <title>Hangman</title>
   </head>
   <body>
     <div id="swinging"></div>
-    <div class="text">HANGMAN</div>
-    <div class="dashes">_ _ _ _ _ _ _</div>
-    <div id="settings_container">
+    <div id="hangman_txt">HANGMAN</div>
+    <div id="dashes">_ _ _ _ _ _ _</div>
+    <div class = "smalltext" id="settings_container">
     <hr>
     <form class="word_length">
       <label>
-        Select length of the word:
-          <select name="length">
-            <% for i in 4..9 %>
-              <option value="<%= i %>">
-                <%= i %>
-              </option>
-            <% end %>
+        Select language:
+          <select name="language">
+              <option value="en"> English </option>
+              <option value="ru"> Russian </option>
           </select>
       </label>
     </form>
 
     <form>
-
+      <div class="length_range">
+        <input type="range" min="4" max="10" value="5" class="slider" id="myRange">
+        <p>Word length: <span id="value"></span></p>
+      </div>
+      </div>
     </form>
+
     <hr>
     </div>
-    <form id="play" method="post" action="/game">
-    <input class="button" id="new_game_button" type="submit" value="START"></div>
+
+    <form class="align_center" method="post" action="/game">
+      <input class="button big_button" type="submit" value="START"></div>
     </form>
+
+    <script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("value");
+    output.innerHTML = slider.value;
+
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
+    </script>
+
   </body>
 </html>

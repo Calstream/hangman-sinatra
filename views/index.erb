@@ -1,14 +1,16 @@
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/shared.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
     <title>Hangman</title>
   </head>
   <body>
     <div id="swinging"></div>
-    <div class="text">HANGMAN</div>
-    <div class="dashes">_ _ _ _ _ _ _</div>
-    <form id="play" method="post" action="/settings">
-    <input class="button" id="new_game_button" type="submit" value="PLAY"></div>
+    <div id="hangman_txt">HANGMAN</div>
+    <div id="dashes">_ _ _ _ _ _ _</div>
+    <div id="empty_space"></div>
+    <form class="align_center" id="play" method="post" action="/settings">
+    <input class="button big_button" type="submit" value="PLAY"></div>
     </form>
   </body>
 </html>

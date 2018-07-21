@@ -11,6 +11,6 @@ post '/settings' do
   erb :settings, :locals => {:word_length => word_length}
 end
 
-get '/game' do
+post '/game' do
   erb :game, :locals => {}
 end
