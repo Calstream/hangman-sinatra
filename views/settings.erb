@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <title>Hangman</title>
+  </head>
+  <body>
+    <div id="swinging"></div>
+    <div class="text">HANGMAN</div>
+    <div class="dashes">_ _ _ _ _ _ _</div>
+    <div id="settings_container">
+    <hr>
+    <form class="word_length">
+      <label>
+        Select length of the word:
+          <select name="length">
+            <% for i in 4..9 %>
+              <option value="<%= i %>">
+                <%= i %>
+              </option>
+            <% end %>
+          </select>
+      </label>
+    </form>
+
+    <form>
+
+    </form>
+    <hr>
+    </div>
+    <form id="play" method="post" action="/game">
+    <input class="button" id="new_game_button" type="submit" value="START"></div>
+    </form>
+  </body>
+</html>

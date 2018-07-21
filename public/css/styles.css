@@ -72,10 +72,50 @@ body
   line-height: 5px;
 }
 
+#settings_container
+{
+    margin-top: 50px;
+}
+
+#play
+{
+  text-align: center;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), #ffffff, rgba(0, 0, 0, 0));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), #ffffff, rgba(0, 0, 0, 0));
+  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), #ffffff, rgba(0, 0, 0, 0));
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), #ffffff, rgba(0, 0, 0, 0));
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: block;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: .25em;
+}
+
 #new_game_button
 {
-  margin-left: auto;
-  margin-right: auto;
   width: 250px;
   height: 100px;
   color: rgba(255, 255, 255, 0.83);
@@ -83,6 +123,7 @@ body
   font-family: 'Raleway', sans-serif;
   margin-top: 100px;
   line-height: 95px;
+  outline: none;
 }
 
 .button:hover

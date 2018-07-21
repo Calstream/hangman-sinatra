@@ -1,11 +1,14 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <title>Hangman</title>
   </head>
   <body>
     <div id="swinging"></div>
     <div class="text">HANGMAN</div>
     <div class="dashes">_ _ _ _ _ _ _</div>
-    <div class="button" id="new_game_button">PLAY</div>
+    <form id="play" method="post" action="/settings">
+    <input class="button" id="new_game_button" type="submit" value="PLAY"></div>
+    </form>
   </body>
 </html>
