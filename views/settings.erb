@@ -11,20 +11,18 @@
     <div id="dashes">_ _ _ _ _ _ _</div>
     <div class = "smalltext" id="settings_container">
     <hr>
-    <form class="word_length">
-      <label>
-        Select language:
+    <form class="language_select">
           <select name="language">
+              <option value="none"> Select language </option>
               <option value="en"> English </option>
               <option value="ru"> Russian </option>
           </select>
-      </label>
     </form>
 
     <form>
       <div class="length_range">
         <input type="range" min="4" max="10" value="5" class="slider" id="myRange">
-        <p>Word length: <span id="value"></span></p>
+        <p id="word_length_label">Word length: <span id="value"></span></p>
       </div>
       </div>
     </form>
@@ -32,19 +30,10 @@
     <hr>
     </div>
 
-    <form class="align_center" method="post" action="/game">
+    <form class="align_center" id="start" method="post" action="/game">
       <input class="button big_button" type="submit" value="START"></div>
     </form>
 
-    <script>
-    var slider = document.getElementById("myRange");
-    var output = document.getElementById("value");
-    output.innerHTML = slider.value;
-
-    slider.oninput = function() {
-      output.innerHTML = this.value;
-    }
-    </script>
-
+    <script src="scripts/settings.js"></script>
   </body>
 </html>
