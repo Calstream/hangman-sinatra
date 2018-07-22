@@ -46,7 +46,7 @@ body
   outline: none;
 }
 
-.button:hover
+.button:hover:enabled
 {
   background-color: rgba(255, 255, 255, 0.23);
   text-shadow: 0px 0px 10px rgba(255,255,255,0.7);

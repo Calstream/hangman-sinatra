@@ -4,7 +4,7 @@ function init_en()
   let i = 0;
   for (i = 0; i < 26; i++)
     {
-      let key = document.createElement("div");
+      let key = document.createElement("input");
       key.className = "key";
       key.className += " button";
       key.className += " en";
@@ -12,7 +12,8 @@ function init_en()
       key.id = char + "_key"
       key.innerHTML += char;
       key.onclick = function() {
-        // TODO
+        this.classList.toggle("used_letter");
+        this.disabled = true;
       }
       keyboard.appendChild(key);
     }
@@ -26,15 +27,18 @@ function init_ru()
   let i = 0;
   for (i = 0; i < 32; i++)
     {
-      let key = document.createElement("div");
+      let key = document.createElement("input");
       key.className = "key";
       key.className += " button";
       key.className += " ru";
       let char = String.fromCharCode("А".charCodeAt(0) + i).toUpperCase();
       key.id = "key_" + i;
-      key.innerHTML += char;
+      key.value += char;
+      key.type = "button";
+      key.enabled = true;
       key.onclick = function() {
-        // TODO
+        this.classList.toggle("used_letter");
+        this.disabled = true;
       }
       keyboard.appendChild(key);
     }

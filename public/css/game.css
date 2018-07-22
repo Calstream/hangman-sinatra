@@ -47,6 +47,13 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.used_letter
+{
+    background-color: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #ccc;
+}
+
 .word
 {
   font-size: 58pt;
