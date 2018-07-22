@@ -90,29 +90,6 @@ hr
   top: -15px;
 }
 
-select1
-{
-  margin-left: 10px;
-  -webkit-appearance: none;
-  appearance: none;
-
-  text-align: center;
-  background-color: rgba(255,255,255,.25);
-
-  border-style: none;
-  font-family: 'Raleway', sans-serif;
-  font-size: 14pt;
-  padding:  5px 5px 5px 7px;
-  outline: none;
-
-}
-
-select1:hover
-{
-  background-color: rgba(255, 255, 255, 0.3);
-  text-shadow: 0px 0px 10px rgba(255,255,255,0.7);
-}
-
 .language_select {
   position: relative;
   font-family: 'Raleway', sans-serif;
@@ -142,6 +119,7 @@ select1:hover
 }
 .select-selected {
   background-color: rgba(255,255,255,.25);
+  border-radius: 3px;
 }
 /*style the arrow inside the select element:*/
 .select-selected:after {
@@ -167,7 +145,7 @@ select1:hover
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
   user-select: none;
-    transition: .1s;
+  transition: .1s;
 }
 /*style items (options):*/
 .select-items {
@@ -177,6 +155,7 @@ select1:hover
   left: 0;
   right: 0;
   z-index: 99;
+  border-radius: 3px;
 }
 /*hide the items when the select box is closed:*/
 .select-hide {
