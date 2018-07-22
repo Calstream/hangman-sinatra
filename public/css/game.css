@@ -16,18 +16,30 @@
 .key
 {
   background-color: rgba(255, 255, 255, 0.13);
-  width: 90px;
-  height: 90px;
   margin: 4px;
   border-radius: 10px;
   border-width: 1px;
   border-style: solid;
   border-color: rgba(255, 255, 255, 0.23);
   color: rgba(255, 255, 255, 0.83);
-  font-size: 40pt;
   font-family: 'Raleway', sans-serif;
   float: left;
   text-align: center;
-  line-height: 90px;
   transition: .3s;
+}
+
+.en
+{
+  width: 90px;
+  height: 90px;
+  font-size: 40pt;
+  line-height: 90px;
+}
+
+.ru
+{
+  width: 71px;
+  height: 71px;
+  font-size: 40pt;
+  line-height: 70px;
 }
