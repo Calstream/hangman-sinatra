@@ -167,6 +167,7 @@ select1:hover
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
   user-select: none;
+    transition: .1s;
 }
 /*style items (options):*/
 .select-items {
@@ -176,12 +177,11 @@ select1:hover
   left: 0;
   right: 0;
   z-index: 99;
-  transition: .5s;
 }
 /*hide the items when the select box is closed:*/
 .select-hide {
   display: none;
 }
 .select-items div:hover, .same-as-selected {
-  background-color: rgba(255,255,255,.35);
+  background-color: rgba(255,255,255,.3);
 }
