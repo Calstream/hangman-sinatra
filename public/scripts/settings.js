@@ -69,6 +69,8 @@ function closeAllSelect(elmnt) {
       arrNo.push(i)
     } else {
       y[i].classList.remove("select-arrow-active");
+      let lan_select = document.getElementsByClassName("language_select");
+      lan_select[0].classList.remove("open");
     }
   }
   for (i = 0; i < x.length; i++) {
