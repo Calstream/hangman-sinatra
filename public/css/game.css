@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 #keyboard
 {
   width: 900px;
@@ -22,7 +24,6 @@
   border-style: solid;
   border-color: rgba(255, 255, 255, 0.23);
   color: rgba(255, 255, 255, 0.83);
-  font-family: 'Raleway', sans-serif;
   float: left;
   text-align: center;
   transition: .3s;
@@ -34,6 +35,7 @@
   height: 90px;
   font-size: 40pt;
   line-height: 90px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .ru
@@ -42,4 +44,5 @@
   height: 71px;
   font-size: 40pt;
   line-height: 70px;
+  font-family: 'Open Sans', sans-serif;
 }
