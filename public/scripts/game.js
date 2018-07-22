@@ -48,3 +48,15 @@ function init_ru()
 }
 
 init_ru();
+
+let ii = 1;
+
+function hang()
+{
+  let progress = document.getElementById("progress");
+  if (ii > 8)
+    ii = 1;
+  progress.className = "hangman" + ii++;
+}
+
+document.addEventListener("click", hang);

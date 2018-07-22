@@ -46,3 +46,33 @@
   line-height: 70px;
   font-family: 'Open Sans', sans-serif;
 }
+
+.word
+{
+  font-size: 58pt;
+  color: white;
+  text-align: center;
+  margin-right: 17px;
+  /*line-height: 5px;*/
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.hangman1, .hangman2, .hangman3, .hangman4, .hangman5,
+.hangman6, .hangman7, .hangman8
+{
+  background: url('../images/hangman_progress_8.png') no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.hangman1 { background-position: -0px -0px; width: 266px; height: 338px; }
+.hangman2 { background-position: -266px -0px; width: 266px; height: 338px; }
+.hangman3 { background-position: -0px -338px; width: 266px; height: 338px; }
+.hangman4 { background-position: -266px -338px; width: 266px; height: 338px; }
+.hangman5 { background-position: -0px -676px; width: 266px; height: 338px; }
+.hangman6 { background-position: -266px -676px; width: 266px; height: 338px; }
+.hangman7 { background-position: -0px -1014px; width: 266px; height: 338px; }
+.hangman8 { background-position: -266px -1014px; width: 266px; height: 338px; }
