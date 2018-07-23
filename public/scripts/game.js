@@ -10,7 +10,8 @@ function init_en()
       key.className += " en";
       let char = String.fromCharCode("A".charCodeAt(0) + i).toUpperCase();
       key.id = char + "_key"
-      key.innerHTML += char;
+      key.value += char;
+      key.enabled = true;
       key.onclick = function() {
         this.classList.toggle("used_letter");
         this.disabled = true;
@@ -51,8 +52,6 @@ function init_ru()
   ts.style.marginLeft = "45px"
 }
 
-init_ru();
-
 let ii = 1;
 
 function hang()
@@ -64,3 +63,7 @@ function hang()
 }
 
 document.addEventListener("click", hang);
+
+
+//init_ru();
+init_en();

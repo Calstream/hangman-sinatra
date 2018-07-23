@@ -11,19 +11,17 @@
     <div class="dashes">_ _ _ _ _ _ _</div>
     <div class = "smalltext" id="settings_container">
     <hr>
-    <form class="language_select">
-          <select name="language">
+    <form class="language_select" id="lan_form">
+          <select name='language'>
               <option value="none"> Select language </option>
               <option value="en"> English </option>
               <option value="ru"> Russian </option>
           </select>
     </form>
-
-    <form>
-      <div class="length_range">
-        <input type="range" min="4" max="10" value="5" class="slider" id="myRange">
+    <p id="language_alert"><%= msg %></p>
+    <form class="length_range" id="len_form">
+        <input type="range" min="4" max="10" value="5" class="slider" id="myRange" name='length'>
         <p id="word_length_label">Word length: <span id="value"></span></p>
-      </div>
       </div>
     </form>
 
@@ -31,7 +29,7 @@
     </div>
 
     <form class="align_center" id="start" method="post" action="/game">
-      <input class="button big_button" type="submit" value="START"></div>
+      <input class="button big_button" type="submit" value="START" onclick="submitForms()" ></div>
     </form>
 
     <script src="scripts/settings.js"></script>

@@ -7,8 +7,21 @@ get '/' do
   erb :index, :locals => {}
 end
 
+get '/settings' do
+
+  msg = ""
+  language = params["language"]
+  length = params["length"]
+  if params["language"] == "none"
+    msg = "You need to select a language"
+  end
+  #throw params.inspect
+
+  erb :settings, :locals => {:msg => ""}
+end
+
 post '/settings' do
-  erb :settings, :locals => {:word_length => word_length}
+  erb :settings, :locals => {:msg => ""}
 end
 
 post '/game' do
