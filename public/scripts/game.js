@@ -67,5 +67,5 @@ function hang()
 document.addEventListener("click", hang);
 
 
-init_ru();
+//init_ru();
 //init_en();
