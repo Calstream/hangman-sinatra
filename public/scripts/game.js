@@ -3,21 +3,7 @@ function init_en()
   let keyboard = document.querySelector("#keyboard");
   let i = 0;
   for (i = 0; i < 26; i++)
-    {
-      let key = document.createElement("input");
-      key.className = "key";
-      key.className += " button";
-      key.className += " en";
-      let char = String.fromCharCode("A".charCodeAt(0) + i).toUpperCase();
-      key.id = char + "_key"
-      key.value += char;
-      key.enabled = true;
-      key.onclick = function() {
-        this.classList.toggle("used_letter");
-        this.disabled = true;
-      }
-      keyboard.appendChild(key);
-    }
+    keyboard.appendChild(create_key(i, true));
   let s = document.querySelector("#s_key");
   s.style.marginLeft = "45px"
 }
@@ -27,22 +13,7 @@ function init_ru()
   let keyboard = document.querySelector("#keyboard");
   let i = 0;
   for (i = 0; i < 32; i++)
-    {
-      let key = document.createElement("input");
-      key.className = "key";
-      key.className += " button";
-      key.className += " ru";
-      let char = String.fromCharCode("А".charCodeAt(0) + i).toUpperCase();
-      key.id = "key_" + i;
-      key.value += char;
-      key.type = "button";
-      key.enabled = true;
-      key.onclick = function() {
-        this.classList.toggle("used_letter");
-        this.disabled = true;
-      }
-      keyboard.appendChild(key);
-    }
+      keyboard.appendChild(create_key(i, false));
   for(i = 0; i < 11; i++)
   {
     let top_row_key = document.querySelector("#key_" + i);
@@ -50,6 +21,37 @@ function init_ru()
   }
   let ts = document.querySelector("#key_22");
   ts.style.marginLeft = "45px"
+}
+
+function create_key(i, is_en)
+{
+  let key = document.createElement("button");
+  key.className = "key";
+  key.className += " button";
+  let char;
+  if (is_en)
+  {
+    key.className += " en";
+    char = String.fromCharCode("A".charCodeAt(0) + i).toUpperCase();
+    key.id = char + "_key"
+  }
+
+  else
+  {
+    key.className += " ru";
+    char = String.fromCharCode("А".charCodeAt(0) + i).toUpperCase();
+    key.id = "key_" + i;
+  }
+
+  key.innerHTML += char;
+  key.type = "button";
+  key.disabled = false;
+  key.onclick = function()
+  {
+    this.className += " used_letter";
+    this.disabled = true;
+  }
+  return key;
 }
 
 let ii = 1;
@@ -65,5 +67,5 @@ function hang()
 document.addEventListener("click", hang);
 
 
-//init_ru();
-init_en();
+init_ru();
+//init_en();

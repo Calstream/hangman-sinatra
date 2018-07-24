@@ -60,7 +60,7 @@ body
   text-shadow: 0px 0px 10px rgba(255,255,255,0.7);
 }
 
-.button:active
+.button:active:enabled
 {
   transition: .1s;
   -webkit-box-shadow: 0px 0px 10px 1px rgba(255,255,255,0.5);
