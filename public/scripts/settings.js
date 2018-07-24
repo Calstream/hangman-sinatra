@@ -107,8 +107,8 @@ slider.oninput = function()
   output.innerHTML = this.value;
 }
 
-submitForms = function()
+/*submitForms = function()
 {
     document.getElementById("len_form").submit();
     document.getElementById("lan_form").submit();
-}
+}*/

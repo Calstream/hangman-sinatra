@@ -8,20 +8,15 @@ get '/' do
 end
 
 get '/settings' do
-
   msg = ""
   language = params["language"]
   length = params["length"]
   if params["language"] == "none"
     msg = "You need to select a language"
   end
-  #throw params.inspect
+  throw params.inspect
 
-  erb :settings, :locals => {:msg => ""}
-end
-
-post '/settings' do
-  erb :settings, :locals => {:msg => ""}
+  erb :settings, :locals => {:msg => msg}
 end
 
 post '/game' do

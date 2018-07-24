@@ -89,7 +89,9 @@ hr
 
 #start
 {
-  margin-top: 30px
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #word_length_label
