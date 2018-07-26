@@ -12,8 +12,10 @@ get '/settings' do
     length = params["length"]
     msg = check_params(language, length)
     if msg == "ok"
-      redirect to("/game?lan=#{language}&len=#{length}")
+      redirect "/game?lan=#{language}&len=#{length}"
+      #erb :settings, :locals => {:msg => "then perish"}
     end
+    #throw params.inspect
   end
   erb :settings, :locals => {:msg => msg}
 end
@@ -32,10 +34,11 @@ def check_params(language, length)
     end
   else
     msg = "Don't do that."
-end
+  end
+  msg
 end
 
-post '/game' do
+get '/game' do
   if params["lan"] == "en"
     erb :game_en, :locals => {}
   elsif params["lan"] == "ru"
