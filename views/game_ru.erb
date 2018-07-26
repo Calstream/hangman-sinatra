@@ -7,7 +7,14 @@
   </head>
   <body>
     <div id="progress" class="hangman1"></div>
-    <div class="word">_B_ _I_ _T_</div>
+    <% dashes = "" %>
+    <% i = 1 %>
+    <% l = len.to_i %>
+    <% until i > l do %>
+      <% dashes += "_" %>
+      <% i += 1%>
+    <% end %>
+    <div class="word"> <%= dashes %> </div>
     <div id="keyboard"></div>
   </body>
   <script src="../scripts/game.js"></script>

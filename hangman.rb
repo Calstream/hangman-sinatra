@@ -39,10 +39,10 @@ def check_params(language, length)
 end
 
 get '/game' do
+  len = params["len"]
   if params["lan"] == "en"
-    erb :game_en, :locals => {}
+    erb :game_en, :locals => {:len => len}
   elsif params["lan"] == "ru"
-    erb :game_ru, :locals => {}
+    erb :game_ru, :locals => {:len => len}
   end
-  erb :game, :locals => {}
 end
