@@ -3,8 +3,9 @@
 
 body
 {
-  background: linear-gradient(200deg, #56b09d, #2e458e);
-  background-size: 400% 400%;
+      /*background: linear-gradient(135deg, #8363a1 0%, #74a8c3 100%);*/
+  background: linear-gradient(135deg, #56b09d, #2e458e);
+  background-size: 200% 200%;
   overflow: hidden;
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

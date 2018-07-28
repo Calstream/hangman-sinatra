@@ -37,11 +37,24 @@ def get_random_word(language, length)
   random_word.upcase
 end
 
+def guess(char)
+  ind = session[:word].index(char)
+  if ind == nil
+    # TODO:
+  else
+    indices = (0 ... session[:word].length).find_all { |i| session[:word][i] == char }
+    indices.each do |ind|
+      session[:dashes][ind] = char
+    end
+  end
+end
+
 get '/' do
   @session = session
   session[:word] = ""
   session[:attempts_left] = -1
   session[:language] = ""
+  session[:dashes] = ""
   session[:set] = false
   erb :index, :locals => {}
 end
@@ -56,21 +69,38 @@ get '/settings' do
       session[:language] = language
       session[:word] = get_random_word(language,length)
       session[:attempts_left] = 8
+      session[:dashes] = ""
+      i = 2
+      until i > session[:word].length do
+        session[:dashes] += "_"
+        i += 1
+      end
       session[:set] = true
       redirect "/game"
-      #erb :settings, :locals => {:msg => "then perish"}
     end
-    #throw params.inspect
   end
+
   erb :settings, :locals => {:msg => msg}
 end
 
 get '/game' do
   if session[:set]
-  #body = partial :"partials/game"
-    #throw params.inspect
     erb :game, :locals => {}
+    #throw params.inspect
   else
     redirect "/"
   end
+end
+
+(1..32).each do |keynum|
+get "/key_#{keynum}" do
+  char = ""
+  if session[:language] == "en"
+    char = ("A".ord + keynum - 1).chr
+  else
+    char = ("А".ord + keynum - 1).chr
+  end
+  guess(char)
+  redirect "/game"
+end
 end
