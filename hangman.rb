@@ -1,7 +1,11 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'sinatra/partial'
 
 enable :sessions
+
+enable :partial_underscores
+set :partial_template_engine, :erb
 
 def check_params(language, length)
   msg = "ok"
@@ -34,11 +38,11 @@ def get_random_word(language, length)
 end
 
 get '/' do
-  erb :index, :locals => {}
   @session = session
   session[:word] = ""
-  session[:lives_left] = 8
+  session[:attempts_left] = 5
   session[:language] = ""
+  erb :index, :locals => {}
 end
 
 get '/settings' do
@@ -50,7 +54,7 @@ get '/settings' do
     if msg == "ok"
       session[:language] = language
       word = get_random_word(language,length)
-      redirect "/game", 307
+      redirect "/game"
       #erb :settings, :locals => {:msg => "then perish"}
     end
     #throw params.inspect
@@ -59,9 +63,10 @@ get '/settings' do
 end
 
 get '/game' do
+  body = partial :"partials/game"
   if session[:language] == "en"
-    erb :game_en, :locals => {}
+    erb :game_en, :locals => { :game_partial => body }
   else
-    erb :game_ru, :locals => {}
+    erb :game_ru, :locals => { :game_partial => body }
   end
 end

@@ -6,16 +6,7 @@
     <title>Hangman</title>
   </head>
   <body>
-    <div id="progress" class="hangman1"></div>
-    <% dashes = "" %>
-    <% i = 1 %>
-    <% l = session[:word].length - 1 %>
-    <% until i > l do %>
-      <% dashes += "_" %>
-      <% i += 1%>
-    <% end %>
-    <div class="word"> <%= dashes %> </div>
-    <div id="keyboard"></div>
+    <%= game_partial %>
   </body>
   <script src="../scripts/game.js"></script>
   <script> init_ru(); </script>
