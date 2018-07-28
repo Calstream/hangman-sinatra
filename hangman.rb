@@ -3,7 +3,6 @@ require 'sinatra/reloader'
 
 enable :sessions
 
-
 def check_params(language, length)
   msg = "ok"
   if ((length.to_i).between?(4,10))
@@ -31,11 +30,15 @@ def get_random_word(language, length)
     file_lines = file.readlines()
     random_word = file_lines[Random.rand(0...file_lines.size())]
   end
-  random_word.upcase
+  session[:word] = random_word.upcase
 end
 
 get '/' do
   erb :index, :locals => {}
+  @session = session
+  session[:word] = ""
+  session[:lives_left] = 8
+  session[:language] = ""
 end
 
 get '/settings' do
@@ -45,7 +48,9 @@ get '/settings' do
     length = params["length"]
     msg = check_params(language, length)
     if msg == "ok"
-      redirect "/game?lan=#{language}&len=#{length}"
+      session[:language] = language
+      word = get_random_word(language,length)
+      redirect "/game", 307
       #erb :settings, :locals => {:msg => "then perish"}
     end
     #throw params.inspect
@@ -53,19 +58,10 @@ get '/settings' do
   erb :settings, :locals => {:msg => msg}
 end
 
-
-post '/game' do
-  erb :game, :locals => {:lan => "", :len => 0}
-end
-
-
 get '/game' do
-  len = params["len"]
-  lan = params["lan"]
-  word = get_random_word(lan,len)
-  if params["lan"] == "en"
-    erb :game_en, :locals => {:len => len, :word => word}
-  elsif params["lan"] == "ru"
-    erb :game_ru, :locals => {:len => len, :word => word}
+  if session[:language] == "en"
+    erb :game_en, :locals => {}
+  else
+    erb :game_ru, :locals => {}
   end
 end

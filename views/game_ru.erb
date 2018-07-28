@@ -9,12 +9,12 @@
     <div id="progress" class="hangman1"></div>
     <% dashes = "" %>
     <% i = 1 %>
-    <% l = len.to_i %>
+    <% l = session[:word].length - 1 %>
     <% until i > l do %>
       <% dashes += "_" %>
       <% i += 1%>
     <% end %>
-    <div class="word"> <%= word %> </div>
+    <div class="word"> <%= dashes %> </div>
     <div id="keyboard"></div>
   </body>
   <script src="../scripts/game.js"></script>
