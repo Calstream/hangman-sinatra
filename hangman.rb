@@ -64,9 +64,5 @@ end
 
 get '/game' do
   body = partial :"partials/game"
-  if session[:language] == "en"
-    erb :game_en, :locals => { :game_partial => body }
-  else
-    erb :game_ru, :locals => { :game_partial => body }
-  end
+  erb :game, :locals => { :game_partial => body, :language => session[:language] }
 end

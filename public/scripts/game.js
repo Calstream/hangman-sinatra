@@ -1,26 +1,27 @@
-function init_en()
+function init(language)
 {
-  let keyboard = document.querySelector("#keyboard");
-  let i = 0;
-  for (i = 0; i < 26; i++)
-    keyboard.appendChild(create_key(i, true));
-  let s = document.querySelector("#s_key");
-  s.style.marginLeft = "45px"
-}
 
-function init_ru()
-{
   let keyboard = document.querySelector("#keyboard");
   let i = 0;
-  for (i = 0; i < 32; i++)
-      keyboard.appendChild(create_key(i, false));
-  for(i = 0; i < 11; i++)
+  if (language == "en")
   {
-    let top_row_key = document.querySelector("#key_" + i);
-    top_row_key.style.marginTop = "30px"
+    for (i = 0; i < 26; i++)
+      keyboard.appendChild(create_key(i, true));
+    let s = document.querySelector("#s_key");
+    s.style.marginLeft = "45px"
   }
-  let ts = document.querySelector("#key_22");
-  ts.style.marginLeft = "45px"
+  else
+  {
+    for (i = 0; i < 32; i++)
+        keyboard.appendChild(create_key(i, false));
+    for(i = 0; i < 11; i++)
+    {
+      let top_row_key = document.querySelector("#key_" + i);
+      top_row_key.style.marginTop = "30px"
+    }
+    let ts = document.querySelector("#key_22");
+    ts.style.marginLeft = "45px"
+  }
 }
 
 function create_key(i, is_en)
@@ -65,7 +66,3 @@ function hang()
 }
 
 document.addEventListener("click", hang);
-
-
-//init_ru();
-//init_en();
