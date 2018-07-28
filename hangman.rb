@@ -34,14 +34,15 @@ def get_random_word(language, length)
     file_lines = file.readlines()
     random_word = file_lines[Random.rand(0...file_lines.size())]
   end
-  session[:word] = random_word.upcase
+  random_word.upcase
 end
 
 get '/' do
   @session = session
   session[:word] = ""
-  session[:attempts_left] = 5
+  session[:attempts_left] = -1
   session[:language] = ""
+  session[:set] = false
   erb :index, :locals => {}
 end
 
@@ -53,7 +54,9 @@ get '/settings' do
     msg = check_params(language, length)
     if msg == "ok"
       session[:language] = language
-      word = get_random_word(language,length)
+      session[:word] = get_random_word(language,length)
+      session[:attempts_left] = 8
+      session[:set] = true
       redirect "/game"
       #erb :settings, :locals => {:msg => "then perish"}
     end
@@ -63,6 +66,11 @@ get '/settings' do
 end
 
 get '/game' do
-  body = partial :"partials/game"
-  erb :game, :locals => { :game_partial => body, :language => session[:language] }
+  if session[:set]
+  #body = partial :"partials/game"
+    #throw params.inspect
+    erb :game, :locals => {}
+  else
+    redirect "/"
+  end
 end

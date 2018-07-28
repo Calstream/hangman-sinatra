@@ -1,14 +1,13 @@
 function init(language)
 {
-
   let keyboard = document.querySelector("#keyboard");
   let i = 0;
   if (language == "en")
   {
     for (i = 0; i < 26; i++)
-      keyboard.appendChild(create_key(i, true));
+      keyboard.appendChild(create_key(i, true, language));
     let s = document.querySelector("#s_key");
-    s.style.marginLeft = "45px"
+    s.style.marginLeft = "45px";
   }
   else
   {
@@ -24,7 +23,7 @@ function init(language)
   }
 }
 
-function create_key(i, is_en)
+function create_key(i, is_en, lan)
 {
   let key = document.createElement("button");
   key.className = "key";
@@ -45,6 +44,7 @@ function create_key(i, is_en)
   }
 
   key.innerHTML += char;
+  //key.innerHTML += lan;
   key.type = "button";
   key.disabled = false;
   key.onclick = function()
