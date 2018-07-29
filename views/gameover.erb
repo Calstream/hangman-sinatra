@@ -7,11 +7,12 @@
   </head>
   <body>
     <div class="swinging"></div>
-    <div class="big_text">HANGMAN</div>
-    <div class="dashes">_ _ _ _ _ _ _</div>
+    <div class="big_text">You lost!</div>
+    <div id="empty_space"></div>
+    <div class="smalltext align_center">The word was <%=session[:word]%></div>
     <div id="empty_space"></div>
     <form class="align_center" id="play" method="get" action="/settings">
-    <input class="button big_button" type="submit" value="PLAY"></div>
+    <input class="button big_button" type="submit" value="RETRY"></div>
     </form>
   </body>
 </html>

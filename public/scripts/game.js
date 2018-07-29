@@ -25,7 +25,7 @@ function init(language)
 
 function create_key(i, is_en)
 {
-  let key = document.createElement("input");
+  let key = document.createElement("button");
   key.className = "key";
   key.className += " button";
   let char;
@@ -43,16 +43,16 @@ function create_key(i, is_en)
     key.id = "key_" + i;
   }
 
-  //key.innerHTML += char;
+  key.innerHTML += char;
   //key.setAttribute("href", "http://www.google.com");
-  key.value += char;
-  key.type = "button";
+  //key.value += char;
+  key.type = "submit";
   key.disabled = false;
   key.onclick = function()
   {
     this.className += " used_letter";
     this.disabled = true;
-    location.href = key.id;
+    //location.href = key.id;
   }
   return key;
 }

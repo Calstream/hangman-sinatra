@@ -16,7 +16,7 @@ body
                                   supported by Chrome and Opera */
 }
 
-#swinging
+.swinging
 {
   margin-left: auto;
   margin-right: auto;
@@ -83,7 +83,7 @@ body
   text-align: center;
 }
 
-#hangman_txt
+.big_text
 {
   font-size: 60pt;
   font-family: 'Quicksand', sans-serif;
@@ -92,6 +92,13 @@ body
   margin-right: 20px;
   margin-top: 70px;
   line-height: 37px;
+}
+
+.smalltext
+{
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
 }
 
 .dashes

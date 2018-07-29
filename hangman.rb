@@ -40,7 +40,7 @@ end
 def guess(char)
   ind = session[:word].index(char)
   if ind == nil
-    # TODO:
+    session[:attempts_left] -= 1
   else
     indices = (0 ... session[:word].length).find_all { |i| session[:word][i] == char }
     indices.each do |ind|
@@ -85,11 +85,25 @@ end
 
 get '/game' do
   if session[:set]
+    if session[:attempts_left] == 0
+      redirect "/gameover"
+    end
     erb :game, :locals => {}
     #throw params.inspect
   else
     redirect "/"
   end
+end
+
+post '/game' do
+  #params[:keyboard]
+  throw inspect.params
+  erb :game, :locals => {}
+end
+
+
+get '/gameover' do
+  erb :gameover, :locals => {}
 end
 
 (1..32).each do |keynum|
