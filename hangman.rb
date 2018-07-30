@@ -85,7 +85,7 @@ end
 
 get '/game' do
   if session[:set]
-    if session[:attempts_left] == 0
+    if session[:attempts_left] == 0 or session[:dashes].index("_") == nil
       redirect "/gameover"
     end
     erb :game, :locals => {}
@@ -94,13 +94,6 @@ get '/game' do
     redirect "/"
   end
 end
-
-post '/game' do
-  #params[:keyboard]
-  throw inspect.params
-  erb :game, :locals => {}
-end
-
 
 get '/gameover' do
   erb :gameover, :locals => {}

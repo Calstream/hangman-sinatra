@@ -1,0 +1,15 @@
+.alive
+{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 270px;
+  height: 338px;
+  background-image: url("../images/alive.png");
+}
+
+#play_again
+{
+  font-size: 45pt;
+  width: 400px;
+}

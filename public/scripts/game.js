@@ -60,7 +60,7 @@ function create_key(i, is_en)
   {
     this.className += " used_letter";
     this.disabled = true;
-    //location.href = key.id;
+    location.href = key.id;
   }
   return key;
 }

@@ -3,16 +3,23 @@
     <link rel="icon" href="../images/icon.png" type="image/icon">
     <link rel="stylesheet" type="text/css" href="../css/shared.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/gameover.css">
     <title>Hangman</title>
   </head>
   <body>
-    <div class="swinging"></div>
-    <div class="big_text">You lost!</div>
+    <% text = "You won!" %>
+    <% classname = "alive" %>
+    <% if session[:attempts_left] == 0 %>
+      <% text = "You lost!" %>
+      <% classname = "swinging" %>
+    <% end %>
+    <div class="<%= classname %>"></div>
+    <div class="big_text"><%= text %></div>
     <div id="empty_space"></div>
     <div class="smalltext align_center">The word was <%=session[:word]%></div>
     <div id="empty_space"></div>
     <form class="align_center" id="play" method="get" action="/settings">
-    <input class="button big_button" type="submit" value="RETRY"></div>
+      <input id="play_again" class="button big_button" type="submit" value="PLAY AGAIN"></div>
     </form>
   </body>
 </html>
