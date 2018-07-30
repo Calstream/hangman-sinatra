@@ -8,7 +8,7 @@
   <body>
     <div id="progress" class="<%= "hangman#{9 - session[:attempts_left]}" %>"></div>
     <div class="word"> <%= session[:dashes] %> </div>
-    <form id="keyboard" method="post" action="/game"></form>
+    <div id="keyboard"> </div>
     <p><%= session[:word] %></p>
   </body>
   <script src="../scripts/game.js"></script>

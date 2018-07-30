@@ -5,7 +5,14 @@ function init(language)
   if (language == "en")
   {
     for (i = 1; i <= 26; i++)
+    {
+      //let form = document.createElement("form");
+      //form.action = "/game";
+      //form.method = "get";
+      //form.appendChild(create_key(i, true))
+      //keyboard.appendChild(form);
       keyboard.appendChild(create_key(i, true));
+    }
     let s = document.querySelector("#key_19");
     s.style.marginLeft = "45px";
   }
@@ -25,9 +32,10 @@ function init(language)
 
 function create_key(i, is_en)
 {
-  let key = document.createElement("button");
+  let key = document.createElement("input");
   key.className = "key";
   key.className += " button";
+  key.name = "letter";
   let char;
   if (is_en)
   {
@@ -43,9 +51,9 @@ function create_key(i, is_en)
     key.id = "key_" + i;
   }
 
-  key.innerHTML += char;
+  //key.innerHTML += char;
   //key.setAttribute("href", "http://www.google.com");
-  //key.value += char;
+  key.value += char;
   key.type = "submit";
   key.disabled = false;
   key.onclick = function()
