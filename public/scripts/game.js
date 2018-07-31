@@ -63,7 +63,9 @@ function create_key(i, is_en)
     this.className += " used_letter";
     this.disabled = true;
     //document.getElementById("form" + this.id).submit();
-    location.href = "/game?letter=" + i;
+    let url = "/game?letter=" + i
+    $('#game').load(url + ' #game');
+    //location.href = "/game?letter=" + i;
   }
   return key;
 }
@@ -78,4 +80,4 @@ function hang()
   progress.className = "hangman" + ii++;
 }
 
-document.addEventListener("click", hang);
+//document.addEventListener("click", hang);

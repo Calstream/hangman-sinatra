@@ -85,16 +85,18 @@ end
 
 get '/game' do
   if session[:set]
-    char = ""
-    if session[:language] == "en"
-      char = ("A".ord + params["letter"].to_i - 1).chr
-    else
-      char = ("А".ord + params["letter"].to_i - 1).chr(Encoding::UTF_8)
+    if params.has_key?(:letter)
+      char = ""
+      if session[:language] == "en"
+        char = ("A".ord + params["letter"].to_i - 1).chr
+      else
+        char = ("А".ord + params["letter"].to_i - 1).chr(Encoding::UTF_8)
+      end
+      guess(char)
+      if session[:attempts_left] == 0 or session[:dashes].index("_") == nil
+        redirect "/gameover"
     end
-    guess(char)
-    if session[:attempts_left] == 0 or session[:dashes].index("_") == nil
-      redirect "/gameover"
-    end
+  end
     erb :game, :locals => {}
     #throw params.inspect
   else
