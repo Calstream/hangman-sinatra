@@ -6,11 +6,13 @@ function init(language)
   {
     for (i = 1; i <= 26; i++)
     {
-      //let form = document.createElement("form");
-      //form.action = "/game";
-      //form.method = "get";
-      //form.appendChild(create_key(i, true))
-      //keyboard.appendChild(form);
+      /*let form = document.createElement("form");
+      form.action = "/game";
+      form.method = "get";
+      let child = create_key(i, true);
+      form.id = "form" + child.id;
+      form.appendChild(child);
+      keyboard.appendChild(form);*/
       keyboard.appendChild(create_key(i, true));
     }
     let s = document.querySelector("#key_19");
@@ -60,7 +62,8 @@ function create_key(i, is_en)
   {
     this.className += " used_letter";
     this.disabled = true;
-    location.href = key.id;
+    //document.getElementById("form" + this.id).submit();
+    location.href = "/game?letter=" + i;
   }
   return key;
 }
