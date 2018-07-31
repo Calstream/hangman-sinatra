@@ -94,7 +94,7 @@ get '/game' do
       end
       guess(char)
       if session[:attempts_left] == 0 or session[:dashes].index("_") == nil
-        redirect "/gameover"
+        redirect to "/gameover"
     end
   end
     erb :game, :locals => {}

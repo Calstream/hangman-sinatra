@@ -5,16 +5,7 @@ function init(language)
   if (language == "en")
   {
     for (i = 1; i <= 26; i++)
-    {
-      /*let form = document.createElement("form");
-      form.action = "/game";
-      form.method = "get";
-      let child = create_key(i, true);
-      form.id = "form" + child.id;
-      form.appendChild(child);
-      keyboard.appendChild(form);*/
       keyboard.appendChild(create_key(i, true));
-    }
     let s = document.querySelector("#key_19");
     s.style.marginLeft = "45px";
   }
@@ -53,8 +44,6 @@ function create_key(i, is_en)
     key.id = "key_" + i;
   }
 
-  //key.innerHTML += char;
-  //key.setAttribute("href", "http://www.google.com");
   key.value += char;
   key.type = "submit";
   key.disabled = false;
@@ -62,22 +51,8 @@ function create_key(i, is_en)
   {
     this.className += " used_letter";
     this.disabled = true;
-    //document.getElementById("form" + this.id).submit();
     let url = "/game?letter=" + i
     $('#game').load(url + ' #game');
-    //location.href = "/game?letter=" + i;
   }
   return key;
 }
-
-let ii = 1;
-
-function hang()
-{
-  let progress = document.getElementById("progress");
-  if (ii > 8)
-    ii = 1;
-  progress.className = "hangman" + ii++;
-}
-
-//document.addEventListener("click", hang);
