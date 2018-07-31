@@ -89,7 +89,7 @@ get '/game' do
     if session[:language] == "en"
       char = ("A".ord + params["letter"].to_i - 1).chr
     else
-      char = ("А".ord + params["letter"].to_i - 1).chr
+      char = ("А".ord + params["letter"].to_i - 1).chr(Encoding::UTF_8)
     end
     guess(char)
     if session[:attempts_left] == 0 or session[:dashes].index("_") == nil
@@ -104,17 +104,4 @@ end
 
 get '/gameover' do
   erb :gameover, :locals => {}
-end
-
-(1..32).each do |keynum|
-get "/key_#{keynum}" do
-  char = ""
-  if session[:language] == "en"
-    char = ("A".ord + keynum - 1).chr
-  else
-    char = ("А".ord + keynum - 1).chr
-  end
-  guess(char)
-  redirect "/game"
-end
 end
