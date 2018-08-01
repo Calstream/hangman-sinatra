@@ -52,7 +52,13 @@ function create_key(i, is_en)
     this.className += " used_letter";
     this.disabled = true;
     let url = "/game?letter=" + i
-    $('#game').load(url + ' #game');
+    $('#game').load(url + ' #game', function(response, status)
+    {
+      if (document.querySelector(".word") == undefined)
+        $( 'body' ).load( "/gameover" );
+    });
+          //if needed, abort the request later..
+  //xhr.abort();
   }
   return key;
 }
