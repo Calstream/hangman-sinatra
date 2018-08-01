@@ -54,11 +54,10 @@ function create_key(i, is_en)
     let url = "/game?letter=" + i
     $('#game').load(url + ' #game', function(response, status)
     {
-      if (document.querySelector(".word") == undefined)
-        $( 'body' ).load( "/gameover" );
+      if (document.querySelector(".word") == undefined ||
+          document.querySelector("#progress") == undefined )
+        window.location.replace("/gameover");
     });
-          //if needed, abort the request later..
-  //xhr.abort();
   }
   return key;
 }
