@@ -54,9 +54,9 @@ function create_key(i, is_en)
     let url = "/game?letter=" + i
     $('#game').load(url + ' #game', function(response, status)
     {
-      if (document.querySelector(".word") == undefined ||
-          document.querySelector("#progress") == undefined )
-        window.location.replace("/gameover");
+      if (document.querySelector(".word").innerHTML.indexOf("_") == -1 ||
+          document.querySelector(".hangman9") != undefined )
+            window.location.replace("/gameover");
     });
   }
   return key;

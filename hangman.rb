@@ -48,9 +48,9 @@ get '/game' do
         char = ("А".ord + params["letter"].to_i - 1).chr(Encoding::UTF_8)
       end
       guess(char)
-      if session[:attempts_left] == 0 or session[:dashes].index("_") == nil
-        redirect to "/gameover"
-    end
+      #if session[:attempts_left] == 0 or session[:dashes].index("_") == nil
+        #redirect to "/gameover"
+    #end
   end
     erb :game, :locals => {}
   else

@@ -35,8 +35,7 @@ module Hangman
     if ind == nil
       session[:attempts_left] -= 1
     else
-      indices = (0 ... session[:word].length).find_all
-          { |i| session[:word][i] == char }
+      indices = (0 ... session[:word].length).find_all { |i| session[:word][i] == char }
       indices.each do |ind|
         session[:dashes][ind] = char
       end

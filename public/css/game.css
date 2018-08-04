@@ -57,7 +57,7 @@
 }
 
 .hangman1, .hangman2, .hangman3, .hangman4, .hangman5,
-.hangman6, .hangman7, .hangman8
+.hangman6, .hangman7, .hangman8, .hangman9
 {
   background: url('../images/hangman_progress.png') no-repeat;
   margin-left: auto;
