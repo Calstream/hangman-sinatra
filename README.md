@@ -1,2 +1,2 @@
 # hangman-sinatra
-hanged-man.herokuapp.com
+[Play here](hanged-man.herokuapp.com)
