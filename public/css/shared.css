@@ -4,7 +4,7 @@
 body
 {
       /*background: linear-gradient(135deg, #8363a1 0%, #74a8c3 100%);*/
-  background: linear-gradient(135deg, #56b09d, #2e458e);
+  background: linear-gradient(235deg, #56b09d, #2e458e);
   background-size: 200% 200%;
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -13,13 +13,16 @@ body
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+  padding-top: 0px;
 }
+
+::-moz-focus-inner {border:0;}
 
 .swinging
 {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
+  /*margin-top: 30px;*/
   width: 300px;
   height: 338px;
   background-image: url("../images/hangman_swinging.png");

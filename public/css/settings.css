@@ -17,6 +17,16 @@
   margin-right: auto;
 }
 
+input[type=range]::-moz-focus-outer
+{
+  border: 0;
+}
+
+input[type=range]::-moz-range-track
+{
+  visibility: hidden;
+}
+
 .slider
 {
   -webkit-appearance: none;
@@ -29,6 +39,7 @@
   opacity: 0.7;
   -webkit-transition: .2s;
   transition: opacity .2s;
+
 }
 
 .slider:hover
