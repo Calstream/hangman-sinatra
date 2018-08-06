@@ -6,7 +6,6 @@ body
       /*background: linear-gradient(135deg, #8363a1 0%, #74a8c3 100%);*/
   background: linear-gradient(135deg, #56b09d, #2e458e);
   background-size: 200% 200%;
-  overflow: hidden;
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -72,7 +71,7 @@ body
 .big_button
 {
   width: 250px;
-  height: 100px;
+  height: 95px;
   color: rgba(255, 255, 255, 0.83);
   font-size: 55pt;
   line-height: 95px;

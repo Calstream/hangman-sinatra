@@ -7,10 +7,10 @@
     <title>Hangman</title>
   </head>
   <body>
-    <% text = "You won!" %>
+    <% text = "You win!" %>
     <% classname = "alive" %>
     <% if session[:attempts_left] == 0 %>
-      <% text = "You lost!" %>
+      <% text = "You lose!" %>
       <% classname = "swinging" %>
     <% end %>
     <div class="<%= classname %>"></div>
