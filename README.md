@@ -1,2 +1,3 @@
 # hangman-sinatra
-[Play here](http://hanged-man.herokuapp.com)
+Hangman game in russian and english.
+## [Play here](http://hanged-man.herokuapp.com)
